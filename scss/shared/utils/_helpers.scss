@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Helper classes
@@ -391,6 +374,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -401,6 +385,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -419,6 +404,7 @@
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
     .w#{$infix}-auto {
       width: auto !important;
     }
@@ -426,12 +412,15 @@
     .w#{$infix}-25 {
       width: 25% !important;
     }
+
     .w#{$infix}-50 {
       width: 50% !important;
     }
+
     .w#{$infix}-75 {
       width: 75% !important;
     }
+
     .w#{$infix}-100 {
       width: 100% !important;
     }
@@ -439,30 +428,39 @@
     .wmin#{$infix}-0 {
       min-width: 0 !important;
     }
+
     .wmin#{$infix}-200 {
       min-width: 200px !important;
     }
+
     .wmin#{$infix}-250 {
       min-width: 250px !important;
     }
+
     .wmin#{$infix}-300 {
       min-width: 300px !important;
     }
+
     .wmin#{$infix}-350 {
       min-width: 350px !important;
     }
+
     .wmin#{$infix}-400 {
       min-width: 400px !important;
     }
+
     .wmin#{$infix}-450 {
       min-width: 450px !important;
     }
+
     .wmin#{$infix}-500 {
       min-width: 500px !important;
     }
+
     .wmin#{$infix}-550 {
       min-width: 550px !important;
     }
+
     .wmin#{$infix}-600 {
       min-width: 600px !important;
     }
@@ -470,6 +468,7 @@
     .flex#{$infix}-0 {
       flex: 0 1 auto !important;
     }
+
     .flex#{$infix}-1 {
       flex: 1 !important;
     }
@@ -477,6 +476,7 @@
     .overflow#{$infix}-auto {
       overflow: auto !important;
     }
+
     .overflow#{$infix}-visible {
       overflow: visible !important;
     }
@@ -484,15 +484,19 @@
     .border#{$infix}-0 {
       border: 0 !important;
     }
+
     .border-top#{$infix}-0 {
       border-top: 0 !important;
     }
+
     .border-bottom#{$infix}-0 {
       border-bottom: 0 !important;
     }
+
     .border-left#{$infix}-0 {
       border-left: 0 !important;
     }
+
     .border-right#{$infix}-0 {
       border-right: 0 !important;
     }
@@ -500,12 +504,15 @@
     .rounded#{$infix}-top {
       @include border-top-radius($border-radius !important);
     }
+
     .rounded#{$infix}-top-0 {
       @include border-top-radius(0 !important);
     }
+
     .rounded#{$infix}-left {
       @include border-left-radius($border-radius !important);
     }
+
     .rounded#{$infix}-left-0 {
       @include border-left-radius(0 !important);
     }
@@ -518,6 +525,7 @@
 
 // Disable all transitions
 .no-transitions * {
+
   &,
   &:before,
   &:after {

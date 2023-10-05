@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Text styling
@@ -28,8 +11,18 @@
 // Headings
 //
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   letter-spacing: $headings-letter-spacing;
 }
 
@@ -42,9 +35,10 @@ h1, h2, h3, h4, h5, h6,
 .list {
 
   // Add vertical spacing to the list items
-  > li {
+  >li {
+
     &,
-    .list > li {
+    .list>li {
       margin-top: map-get($spacers, 1);
     }
 
@@ -56,9 +50,10 @@ h1, h2, h3, h4, h5, h6,
 
   // Extended list
   &-extended {
-    > li {
+    >li {
+
       &,
-      .list > li {
+      .list>li {
         margin-top: ($spacer / 2);
       }
     }
@@ -160,13 +155,13 @@ ul {
   align-items: center;
 
   // Spacing between items
-  > *:not(:first-child) {
+  >*:not(:first-child) {
     margin-left: $list-icons-spacer;
   }
 
   // Extended size
   &-extended {
-    > *:not(:first-child) {
+    >*:not(:first-child) {
       margin-left: $list-icons-spacer * 2;
     }
   }
@@ -183,14 +178,14 @@ a.list-icons-item {
   }
 
   // Icon
-  > i {
+  >i {
     top: 0;
   }
 
   // Hover/open states
   &:hover,
   &:focus,
-  .show > & {
+  .show>& {
     outline: 0;
     opacity: 0.75;
   }
@@ -309,6 +304,7 @@ a.list-icons-item {
 
   // Setup color inheritance
   &[class*=border-] {
+
     &:before,
     &:after {
       border-color: inherit;
@@ -367,7 +363,7 @@ a.list-icons-item {
   z-index: 1;
 
   // Text container
-  > span {
+  >span {
     background-color: $body-bg;
     display: inline-block;
 

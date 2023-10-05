@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Dropdown menu component
@@ -37,15 +20,13 @@
   text-overflow: ellipsis;
   cursor: pointer;
   margin-bottom: 0;
-  @include transition(
-    background-color ease-in-out $component-transition-timer,
-    color ease-in-out $component-transition-timer
-  );
+  @include transition(background-color ease-in-out $component-transition-timer,
+    color ease-in-out $component-transition-timer );
 
   // Add spacing between items
-  & + &,
-  .dropdown-submenu + &,
-  & + .dropdown-submenu {
+  &+&,
+  .dropdown-submenu+&,
+  &+.dropdown-submenu {
     margin-top: $dropdown-item-spacer-y;
   }
 
@@ -69,8 +50,8 @@
     cursor: $cursor-disabled;
 
     // Mute badges and images
-    > .badge,
-    > img {
+    >.badge,
+    >img {
       opacity: 0.8;
     }
   }
@@ -93,8 +74,8 @@
     background-color: $dropdown-header-bg;
 
     // Add top spacing
-    .dropdown-item + &,
-    & + .dropdown-item {
+    .dropdown-item+&,
+    &+.dropdown-item {
       margin-top: $dropdown-padding-y;
     }
   }
@@ -103,19 +84,20 @@
 // Icons, badges and images
 .dropdown-item,
 .dropdown-header {
+
   // Icons and images
-  > i,
-  > img {
+  >i,
+  >img {
     margin-right: $dropdown-icon-spacer-x;
   }
 
   // Icon
-  > i {
+  >i {
     top: 0;
   }
 
   // Image thumbs
-  > img {
+  >img {
     max-height: $line-height-computed;
   }
 }
@@ -140,11 +122,11 @@
 //
 
 .dropdown-menu {
-  > .dropdown-submenu {
+  >.dropdown-submenu {
     position: relative;
 
     // Link
-    > .dropdown-item {
+    >.dropdown-item {
       padding-right: ($dropdown-item-padding-x + ($icon-font-size * 1.5));
 
       // Arrow icon
@@ -169,25 +151,25 @@
     // Hover and open states
     &.show,
     &:hover {
-      > .dropdown-item {
+      >.dropdown-item {
         background-color: $dropdown-link-hover-bg;
         color: $dropdown-link-hover-color;
       }
     }
 
     // Display submenu on hover
-    &:hover > .dropdown-item:not(.dropdown-toggle) ~ .dropdown-menu,
-    &:focus > .dropdown-item:not(.dropdown-toggle) ~ .dropdown-menu {
+    &:hover>.dropdown-item:not(.dropdown-toggle)~.dropdown-menu,
+    &:focus>.dropdown-item:not(.dropdown-toggle)~.dropdown-menu {
       display: block;
     }
 
     // Hide submenu if parent is disabled
     &.disabled {
-      > .dropdown-menu {
+      >.dropdown-menu {
         display: none;
       }
 
-      > .dropdown-item {
+      >.dropdown-item {
         background-color: transparent;
         color: $dropdown-link-disabled-color;
         cursor: $cursor-disabled;
@@ -195,20 +177,21 @@
     }
 
     // Submenu position
-    > .dropdown-menu {
+    >.dropdown-menu {
       top: 0;
       left: 100%;
       margin-top: -($dropdown-padding-y + rem-calc($dropdown-border-width));
     }
 
     // Left submenu position
-    &.dropdown-submenu-left > .dropdown-menu {
+    &.dropdown-submenu-left>.dropdown-menu {
       left: auto;
       right: 100%;
     }
 
     // Make submenu levels stacked on mobile
     @include media-breakpoint-down(lg) {
+
       // Change arrow icon direction
       .dropdown-toggle:after {
         content: $icon-menu-arrow-down;
@@ -228,25 +211,21 @@
       }
 
       // Third level
-      > .dropdown-menu > .dropdown-item,
-      > .dropdown-menu > .dropdown-submenu > .dropdown-item {
+      >.dropdown-menu>.dropdown-item,
+      >.dropdown-menu>.dropdown-submenu>.dropdown-item {
         padding-left: ($dropdown-item-padding-x * 2);
       }
 
       // Third level
-      > .dropdown-menu > .dropdown-submenu > .dropdown-menu > .dropdown-item,
-      > .dropdown-menu
-        > .dropdown-submenu
-        > .dropdown-menu
-        > .dropdown-submenu
-        > .dropdown-item {
+      >.dropdown-menu>.dropdown-submenu>.dropdown-menu>.dropdown-item,
+      >.dropdown-menu>.dropdown-submenu>.dropdown-menu>.dropdown-submenu>.dropdown-item {
         padding-left: ($dropdown-item-padding-x * 3);
       }
     }
   }
 
   // Reverse in dropdown and bottom navbars
-  .dropup > .dropdown-menu {
+  .dropup>.dropdown-menu {
     top: auto;
     bottom: 0;
     margin-top: 0;
@@ -254,15 +233,15 @@
   }
 
   // Spacing between submenus
-  .dropdown-submenu + .dropdown-submenu {
+  .dropdown-submenu+.dropdown-submenu {
     margin-top: $dropdown-item-spacer-y;
   }
 
   //
   // RTL alignment
   //
-  [dir="rtl"] .navbar-nav > .nav-item:not([class*="mega-menu"]) > &,
-  [dir="rtl"] .nav-item:not([class*="mega-menu"]) .navbar-nav-link ~ & {
+  [dir="rtl"] .navbar-nav>.nav-item:not([class*="mega-menu"])>&,
+  [dir="rtl"] .nav-item:not([class*="mega-menu"]) .navbar-nav-link~& {
     /*rtl:begin:ignore*/
     left: auto;
     right: 0;
@@ -299,8 +278,9 @@
 
 // Reverse
 .dropdown-menu-right {
-  [dir="rtl"] .navbar-nav > .nav-item:not([class*="mega-menu"]) > &,
-  [dir="rtl"] .nav-item:not([class*="mega-menu"]) .navbar-nav-link ~ & {
+
+  [dir="rtl"] .navbar-nav>.nav-item:not([class*="mega-menu"])>&,
+  [dir="rtl"] .nav-item:not([class*="mega-menu"]) .navbar-nav-link~& {
     /*rtl:begin:ignore*/
     right: auto;
     left: 0;
@@ -337,9 +317,10 @@
 //
 
 .dropdown-menu-custom {
+
   // Links and labels
-  > .dropdown-item,
-  > .dropdown-submenu > .dropdown-item {
+  >.dropdown-item,
+  >.dropdown-submenu>.dropdown-item {
     color: $white;
 
     // Hover state
@@ -360,10 +341,11 @@
   }
 
   // Background color for submenu link states
-  > .dropdown-submenu {
+  >.dropdown-submenu {
+
     &.show,
     &:hover {
-      > .dropdown-item {
+      >.dropdown-item {
         background-color: $dropdown-dark-hover-bg;
         color: $white;
       }
@@ -371,7 +353,7 @@
 
     // Remove bg color in disabled links
     &.disabled {
-      > .dropdown-item {
+      >.dropdown-item {
         background-color: transparent;
         color: $dropdown-dark-disabled-color;
       }
@@ -379,7 +361,7 @@
   }
 
   // Dropdown header
-  > .dropdown-header {
+  >.dropdown-header {
     color: $dropdown-dark-header-color;
 
     &-highlight {
@@ -388,7 +370,7 @@
   }
 
   // Divider
-  > .dropdown-divider {
+  >.dropdown-divider {
     border-top-color: $dropdown-dark-divider-bg;
   }
 }

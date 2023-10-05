@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Pace. Corners theme
@@ -31,90 +14,94 @@
   $pace-overlay-color: $slate-900;
   $pace-loader-color: $white;
   $pace-loader-size-max: 1.625rem;
-  $pace-loader-size-min: ($pace-loader-size-max / 2);
+  $pace-loader-size-min: (
+    $pace-loader-size-max / 2
+  );
 
 
-  // Pace theme styles
-  // ------------------------------
+// Pace theme styles
+// ------------------------------
 
-  // Overlay
-  .pace-running {
-    position: fixed;
-    top: 0;
-    left: 0;
+// Overlay
+.pace-running {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $pace-overlay-color;
+
+  // Hide all content
+  >*:not(.pace) {
+    opacity: 0;
+  }
+}
+
+// Base
+.pace {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -($pace-loader-size-max / 2);
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+
+  // Change colors on light/dark backgrounds
+  @if (lightness($pace-overlay-color) < 75) {
+    color: $white;
+  }
+}
+
+// Progress
+.pace-progress {
+  width: 100% !important;
+}
+
+// Activity
+.pace-activity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: $pace-loader-color;
+  border-radius: 50%;
+  animation: corners 1.5s ease infinite;
+  @include size($pace-loader-size-min);
+}
+
+// Hide inactive
+.pace-inactive {
+  display: none;
+}
+
+// Progress text
+@if $pace-show-text {
+  .pace-progress:after {
+    content: attr(data-progress-text);
+    text-align: center;
     width: 100%;
-    height: 100%;
-    background-color: $pace-overlay-color;
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: $pace-loader-size-max + ($spacer / 1.5);
+  }
+}
 
-    // Hide all content
-    > *:not(.pace) {
-      opacity: 0;
-    }
+// Animation
+@keyframes corners {
+  0% {
+    transform: scale(1) rotate(0deg);
   }
 
-  // Base
-  .pace {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin-top: -($pace-loader-size-max / 2);
-    z-index: 9999;
-    user-select: none;
-    pointer-events: none;
-
-    // Change colors on light/dark backgrounds
-    @if (lightness($pace-overlay-color) < 75) {
-      color: $white;
-    }
+  50% {
+    border-radius: 0;
+    transform: scale($pace-loader-size-max / $pace-loader-size-min) rotate(-180deg);
   }
 
-  // Progress
-  .pace-progress {
-    width: 100% !important;
+  100% {
+    transform: scale(1) rotate(-360deg);
   }
-
-  // Activity
-  .pace-activity {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: $pace-loader-color;
-    border-radius: 50%;
-    animation: corners 1.5s ease infinite;
-    @include size($pace-loader-size-min);
-  }
-
-  // Hide inactive
-  .pace-inactive {
-    display: none;
-  }
-
-  // Progress text
-  @if $pace-show-text {
-    .pace-progress:after {
-      content: attr(data-progress-text);
-      text-align: center;
-      width: 100%;
-      display: inline-block;
-      white-space: nowrap;
-      margin-top: $pace-loader-size-max + ($spacer / 1.5);
-    }
-  }
-
-  // Animation
-  @keyframes corners {
-    0% {
-      transform: scale(1) rotate(0deg);
-    }
-    50% {
-      border-radius: 0;
-      transform: scale($pace-loader-size-max / $pace-loader-size-min) rotate(-180deg);
-    }
-    100% {
-      transform: scale(1) rotate(-360deg);
-    }
-  }
+}
 }

@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # C3 charts
@@ -56,6 +39,7 @@
   .c3-axis,
   .c3-axis-y,
   .c3-axis-x {
+
     line,
     path {
       stroke: $chart-axis-line-color;
@@ -97,6 +81,7 @@
       stroke: $chart-grid-color-primary;
     }
   }
+
   .c3-xgrid,
   .c3-ygrid {
     stroke-dasharray: 3 3;
@@ -152,10 +137,12 @@
       font-size: $h1-font-size;
     }
   }
+
   .c3-chart-arcs-title {
     font-size: $h6-font-size;
     fill: $body-color;
   }
+
   .c3-chart-arcs {
     .c3-chart-arcs-background {
       fill: darken($card-bg, 2.5%);
@@ -235,7 +222,7 @@
       border-top: $border-width solid $c3-tooltip-border-color;
 
 
-      > span {
+      >span {
         display: inline-block;
         margin-right: map-get($spacers, 2);
         @include size($badge-mark-size);

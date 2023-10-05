@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # Alpaca forms
@@ -25,12 +8,14 @@
 
 // Check if component is enabled
 @if $enable-alpaca {
+
   // Added to outer field elements to hide them
   .alpaca-hidden {
     display: none;
   }
 
   .alpaca-field {
+
     // Helper text
     .help-block,
     .alpaca-field-text-max-length-indicator {
@@ -63,6 +48,7 @@
 
     // Upload field
     &.alpaca-field-upload {
+
       // Active zone
       .fileupload-active-zone {
         margin-top: ($spacer * 2);
@@ -90,8 +76,9 @@
 
   // If input has error
   .has-error {
+
     // Override text color if menu has error
-    .multiselect-container > .active .form-check {
+    .multiselect-container>.active .form-check {
       color: $white;
     }
 
@@ -105,6 +92,7 @@
 
   // Disabled fields
   .alpaca-disabled {
+
     .form-check label,
     .form-check .switchery {
       cursor: $cursor-disabled;
@@ -114,6 +102,7 @@
 
   // Added to fields that have run through validation and are invalid
   .alpaca-invalid {
+
     // Text
     .alpaca-control-label,
     .alpaca-message {
@@ -177,7 +166,7 @@
   // CKEditor
   //
 
-  .alpaca-field-ckeditor.alpaca-invalid > .cke {
+  .alpaca-field-ckeditor.alpaca-invalid>.cke {
     border-color: $red-800;
   }
 
@@ -186,13 +175,15 @@
   //
 
   .alpaca-field-optiontree {
+
     // Add left spacing to input field
-    .optiontree + .form-control {
+    .optiontree+.form-control {
       margin-left: $element-spacer-x;
     }
 
     // Horizontal layout
     &.optiontree-horizontal {
+
       // Tree
       .optiontree {
         display: inline-block;
@@ -209,7 +200,7 @@
           }
 
           // Extra horizontal spacing
-          + .optiontree-selector {
+          +.optiontree-selector {
             margin-left: $element-spacer-x;
           }
         }
@@ -279,12 +270,14 @@
   // Field objects
   .alpaca-field-object,
   .alpaca-field-array {
+
     // Remove border
     .alpaca-top,
     .alpaca-top .alpaca-container {
       border: 0;
     }
   }
+
   .alpaca-container {
     border: 0;
   }
@@ -299,7 +292,7 @@
   }
 
   // Remove border from field object
-  .alpaca-container-item > .alpaca-container > .alpaca-field-object {
+  .alpaca-container-item>.alpaca-container>.alpaca-field-object {
     border: 0;
   }
 
@@ -310,7 +303,7 @@
   }
 
   // Remove horizontal spacing from form group
-  .alpaca-container > .form-group {
+  .alpaca-container>.form-group {
     margin-left: 0;
     margin-right: 0;
   }

@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # ION Range Slider
@@ -25,14 +8,12 @@
 
 // Check if component is enabled
 @if $enable-ion {
+
   // Base
   .irs {
     position: relative;
     display: block;
-    height: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      ($slider-height * 4);
+    height: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + ($slider-height * 4);
     user-select: none;
     /*rtl:ignore*/
     direction: ltr;
@@ -68,10 +49,7 @@
     overflow: hidden;
     outline: none;
     height: $slider-height;
-    top: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      ($slider-height * 2);
+    top: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + ($slider-height * 2);
     background-color: $slider-bg;
     @include border-radius($rounded-pill);
   }
@@ -114,10 +92,7 @@
   .irs-bar {
     position: absolute;
     display: block;
-    top: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      ($slider-height * 2);
+    top: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + ($slider-height * 2);
     /*rtl:ignore*/
     left: 0;
     width: 0;
@@ -130,10 +105,7 @@
   .irs-bar-edge {
     position: absolute;
     display: block;
-    top: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      ($slider-height * 2);
+    top: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + ($slider-height * 2);
     /*rtl:ignore*/
     left: 0;
     height: 0.75rem;
@@ -144,10 +116,7 @@
   .irs-shadow {
     position: absolute;
     display: none;
-    top: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      ($slider-height * 2);
+    top: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + ($slider-height * 2);
     /*rtl:ignore*/
     left: 0;
     width: 0;
@@ -168,10 +137,7 @@
     background-color: $slider-handle-bg;
     border: $slider-handle-border-width solid $slider-handle-border-color;
     cursor: pointer;
-    top: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      $slider-height;
+    top: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + $slider-height;
     z-index: 1;
     @include size($slider-height * 3);
     @include border-radius($rounded-pill);
@@ -193,9 +159,7 @@
     // Animate handle
     &,
     &:after {
-      @include transition(
-        background-color ease-in-out $component-transition-timer
-      );
+      @include transition(background-color ease-in-out $component-transition-timer );
     }
 
     // Hover state
@@ -240,10 +204,12 @@
     background-color: $slider-bg;
     @include border-radius($border-radius);
   }
+
   .irs-min {
     /*rtl:ignore*/
     left: 0;
   }
+
   .irs-max {
     /*rtl:ignore*/
     right: 0;
@@ -296,11 +262,7 @@
 
   // If slider has grid
   .irs-with-grid {
-    height: $tooltip-arrow-height +
-      ($tooltip-padding-y * 2) +
-      $slider-pips-font-size +
-      ($slider-height * 7) +
-      $slider-pips-spacer-y;
+    height: $tooltip-arrow-height + ($tooltip-padding-y * 2) + $slider-pips-font-size + ($slider-height * 7) + $slider-pips-spacer-y;
 
     // Display grid
     .irs-grid {

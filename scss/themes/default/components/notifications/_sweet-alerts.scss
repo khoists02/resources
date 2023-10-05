@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # Sweet Alerts component
@@ -167,11 +150,12 @@
     }
 
     // Center modal
-    &:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen) > .swal2-modal {
+    &:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal {
       margin: auto;
     }
 
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
       .swal2-modal {
         margin: 0 !important;
       }
@@ -325,7 +309,7 @@
     margin-top: $spacer;
 
     // Add horizontal spacing to buttons
-    > button + button {
+    >button+button {
       margin-left: ($spacer / 2);
     }
 
@@ -410,6 +394,7 @@
 
   // Custom types
   .swal2-popup {
+
     .select2-container,
     .btn-group,
     .uniform-uploader {
@@ -423,7 +408,7 @@
     justify-content: center;
 
     // Spacing between input and text
-    > span:not(.switchery) {
+    >span:not(.switchery) {
       margin-left: $element-spacer-x;
     }
   }
@@ -437,7 +422,7 @@
       align-items: center;
 
       // Add spacing to labels
-      + label {
+      +label {
         margin-left: $spacer;
       }
 
@@ -644,12 +629,12 @@
       &.swal2-active-progress-step {
         background-color: $swal2-active-step-background;
 
-        ~ .swal2-progress-step {
+        ~.swal2-progress-step {
           background-color: $swal2-step-background;
           color: $swal2-step-color;
         }
 
-        ~ .swal2-progress-step-line {
+        ~.swal2-progress-step-line {
           background-color: $swal2-step-background;
         }
       }
@@ -906,7 +891,7 @@
         margin: 0 0 0 map-get($spacers, 3);
 
         // Distance between buttons
-        .btn + .btn {
+        .btn+.btn {
           margin-left: map-get($spacers, 2);
         }
       }
@@ -972,6 +957,7 @@
     0% {
       transform: scale(0.5);
     }
+
     100% {
       transform: scale(1);
     }
@@ -983,6 +969,7 @@
       transform: scale(1);
       opacity: 1;
     }
+
     100% {
       transform: scale(0.5);
       opacity: 0;
@@ -996,16 +983,19 @@
       width: 0;
       opacity: 0;
     }
+
     30% {
       height: 0;
       width: ($swal2-icon-size / 4);
       opacity: 0;
     }
+
     60% {
       height: ($swal2-icon-size / 2);
       width: ($swal2-icon-size / 4);
       opacity: 1;
     }
+
     100% {
       height: ($swal2-icon-size / 2);
       width: ($swal2-icon-size / 4);
@@ -1019,6 +1009,7 @@
       color: transparent;
       border-color: transparent;
     }
+
     25% {
       color: transparent;
     }
@@ -1029,9 +1020,11 @@
     0% {
       opacity: 0;
     }
+
     25% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }

@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # Fancytree
@@ -57,6 +40,7 @@
 
   // Disabled state
   .ui-fancytree-disabled {
+
     .fancytree-container,
     .fancytree-title,
     .fancytree-expander {
@@ -97,12 +81,7 @@
     display: inline-block;
     vertical-align: top;
     margin-left: $fancytree-node-padding-x;
-    margin-top: (
-        $line-height-computed +
-          ($fancytree-node-padding-y * 2) -
-          $icon-font-size
-      ) /
-      2;
+    margin-top: ($line-height-computed + ($fancytree-node-padding-y * 2) - $icon-font-size ) / 2;
     @include size($icon-font-size);
   }
 
@@ -226,9 +205,7 @@
   .fancytree-checkbox {
     width: $custom-control-indicator-size;
     height: $custom-control-indicator-size;
-    border: $custom-control-indicator-border-width
-      solid
-      $custom-control-indicator-border-color;
+    border: $custom-control-indicator-border-width solid $custom-control-indicator-border-color;
     background-color: $custom-control-indicator-bg;
     display: inline-block;
     text-align: center;
@@ -238,12 +215,7 @@
     @include transition($custom-forms-transition);
 
     vertical-align: top;
-    margin-top: (
-        $line-height-computed +
-          ($fancytree-node-padding-y * 2) -
-          $custom-control-indicator-size
-      ) /
-      2;
+    margin-top: ($line-height-computed + ($fancytree-node-padding-y * 2) - $custom-control-indicator-size ) / 2;
     margin-left: $fancytree-node-padding-x;
 
     // Checker base
@@ -254,10 +226,7 @@
       height: $custom-control-indicator-size;
       top: -$custom-control-indicator-border-width;
       left: -$custom-control-indicator-border-width;
-      background: escape-svg($custom-checkbox-indicator-icon-checked)
-        no-repeat
-        50% /
-        #{$custom-control-indicator-bg-size};
+      background: escape-svg($custom-checkbox-indicator-icon-checked) no-repeat 50% / #{$custom-control-indicator-bg-size};
       opacity: 0;
       @include transition(opacity ease-in-out $component-transition-timer);
     }
@@ -282,9 +251,7 @@
 
     // Indeterminate state
     .fancytree-partsel.fancytree-has-children:not(.fancytree-selected) &:after {
-      background-image: escape-svg(
-        $custom-checkbox-indicator-icon-indeterminate
-      );
+      background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate );
     }
 
     // Radio (single select imitation)
@@ -340,6 +307,7 @@
 
   // Marker icon
   #fancytree-drop-marker {
+
     &.fancytree-drop-before,
     &.fancytree-drop-after {
       width: 15rem;
@@ -383,7 +351,7 @@
     @include transition(all ease-in-out $component-transition-timer);
 
     // Editable node input
-    > input {
+    >input {
       border: 0;
       outline: 0;
       padding: 0;
@@ -406,6 +374,7 @@
 
   // Inside dark sidebar
   .sidebar:not(.sidebar-light) {
+
     .fancytree-selected .fancytree-title,
     .fancytree-active .fancytree-title {
       background-color: rgba($white, 0.2);
@@ -423,6 +392,7 @@
   //
 
   .fancytree-ext-table {
+
     // Node
     .fancytree-node {
       display: inline-block;

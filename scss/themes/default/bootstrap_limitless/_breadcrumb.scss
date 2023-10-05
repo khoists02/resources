@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Breadcrumb component
@@ -50,7 +33,7 @@ a.breadcrumb-item {
   // Hover state
   &:hover,
   &:focus,
-  .show > & {
+  .show>& {
     opacity: 0.75;
   }
 }
@@ -59,7 +42,7 @@ a.breadcrumb-item {
 .page-header-content {
 
   // Breadcrumb
-  > .breadcrumb {
+  >.breadcrumb {
     padding-top: 0;
     padding-bottom: ($breadcrumb-padding-y * 2);
 
@@ -76,12 +59,12 @@ a.breadcrumb-item {
 //
 
 // Dash
-.breadcrumb-dash > .breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb-dash>.breadcrumb-item+.breadcrumb-item:before {
   content: '\2013\00a0';
 }
 
 // Arrow
-.breadcrumb-arrow > .breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb-arrow>.breadcrumb-item+.breadcrumb-item:before {
   content: '\2192\00a0';
 
   // RTL
@@ -91,12 +74,12 @@ a.breadcrumb-item {
 }
 
 // Arrows
-.breadcrumb-arrows > .breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb-arrows>.breadcrumb-item+.breadcrumb-item:before {
   content: '\00bb\00a0';
 }
 
 // Caret
-.breadcrumb-caret > .breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb-caret>.breadcrumb-item+.breadcrumb-item:before {
   content: '\203A\00a0';
 }
 
@@ -153,7 +136,7 @@ a.breadcrumb-item {
   padding: $breadcrumb-padding-y 0;
 
   // Spacing between items
-  + .breadcrumb-elements-item {
+  +.breadcrumb-elements-item {
     margin-left: map-get($spacers, 3);
   }
 

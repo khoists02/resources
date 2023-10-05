@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # Steps wizard
@@ -25,27 +8,28 @@
 
 // Check if component is enabled
 @if $enable-wizard {
+
   // Base
   .wizard {
     width: 100%;
 
     // Title
-    > .steps .current-info,
-    > .content > .title {
+    >.steps .current-info,
+    >.content>.title {
       display: none;
     }
 
     // Wizard content
-    > .content {
+    >.content {
       position: relative;
       width: auto;
       padding: 0;
 
-      > .body {
+      >.body {
         padding: 0 $card-spacer-x;
       }
 
-      > iframe {
+      >iframe {
         border: 0;
         @include size(100%);
       }
@@ -53,13 +37,13 @@
 
     // Steps list
     // Steps
-    > .steps {
+    >.steps {
       position: relative;
       display: block;
       width: 100%;
 
       // Wizard nav
-      > ul {
+      >ul {
         display: table;
         width: 100%;
         table-layout: fixed;
@@ -68,7 +52,7 @@
         list-style: none;
 
         // Wizard nav item
-        > li {
+        >li {
           display: table-cell;
           width: auto;
           vertical-align: top;
@@ -92,9 +76,7 @@
             content: "";
             display: block;
             position: absolute;
-            top: ($wizard-step-number-size + $spacer) -
-              ($wizard-step-number-size / 2) -
-              rem-calc($wizard-step-line-size / 2);
+            top: ($wizard-step-number-size + $spacer) - ($wizard-step-number-size / 2) - rem-calc($wizard-step-line-size / 2);
             width: 50%;
             height: $wizard-step-line-size;
             background-color: $wizard-step-number-active-bg;
@@ -116,14 +98,15 @@
 
           // Current step
           &.current {
+
             &:after,
-            ~ li:before,
-            ~ li:after {
+            ~li:before,
+            ~li:after {
               background-color: $wizard-step-line-color;
             }
 
             // Link
-            > a {
+            >a {
               color: $body-color;
               cursor: default;
             }
@@ -141,9 +124,7 @@
                 display: inline-block;
                 font-size: $icon-font-size;
                 @include ll-font-smoothing();
-                @include transition(
-                  all ease-in-out $component-transition-timer
-                );
+                @include transition(all ease-in-out $component-transition-timer );
               }
             }
           }
@@ -157,6 +138,7 @@
 
           // Completed step
           &.done {
+
             // Link
             a {
               @include plain-hover-focus {
@@ -178,9 +160,7 @@
                 display: inline-block;
                 font-size: $icon-font-size;
                 @include ll-font-smoothing();
-                @include transition(
-                  all ease-in-out $component-transition-timer
-                );
+                @include transition(all ease-in-out $component-transition-timer );
               }
             }
           }
@@ -195,7 +175,7 @@
         }
 
         // Add top border if wizard comes after transparent card header
-        .card > .card-header:not([class*="bg-"]) > & {
+        .card>.card-header:not([class*="bg-"])>& {
           border-top: $card-border-width solid $card-border-color;
         }
 
@@ -204,12 +184,12 @@
           margin-bottom: $spacer;
 
           // Nav item
-          > li {
+          >li {
             display: block;
             float: left;
             width: 50%;
 
-            > a {
+            >a {
               margin-bottom: 0;
             }
 
@@ -223,9 +203,11 @@
             }
           }
         }
+
         @include media-breakpoint-down(sm) {
+
           // Nav item
-          > li {
+          >li {
             width: 100%;
 
             &.current:after {
@@ -247,9 +229,7 @@
         border: $wizard-step-line-size solid $wizard-step-line-color;
         font-size: $font-size-lg;
         z-index: 10;
-        line-height: (
-          $wizard-step-number-size - rem-calc($wizard-step-line-size * 2)
-        );
+        line-height: ($wizard-step-number-size - rem-calc($wizard-step-line-size * 2));
         text-align: center;
         @include size($wizard-step-number-size);
         @include border-radius($rounded-pill);
@@ -258,25 +238,25 @@
 
     // Steps pagination
     // Container
-    > .actions {
+    >.actions {
       position: relative;
       text-align: right;
       padding: $card-spacer-x;
       padding-top: 0;
 
       // Paging list
-      > ul {
+      >ul {
         list-style: none;
         padding: 0;
         margin: 0;
         @include clearfix;
 
         // Paging item
-        > li {
+        >li {
           display: inline-block;
 
           // Add horizontal spacing
-          & + li {
+          &+li {
             margin-left: $card-spacer-x;
           }
         }

@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Demo styles
@@ -38,7 +21,7 @@
     z-index: 10;
     @include size(90px);
 
-    > span {
+    >span {
       position: absolute;
       top: 50%;
       left: 0;
@@ -56,8 +39,8 @@
     width: 100%;
     max-width: 200px;
 
-    > .ui-sortable-handle,
-    > .ui-selectee {
+    >.ui-sortable-handle,
+    >.ui-selectee {
       background-color: $btn-light-bg;
       border: $btn-border-width solid $btn-light-border-color;
 
@@ -69,14 +52,14 @@
       }
     }
 
-    > .ui-sortable-helper:first-child + li {
+    >.ui-sortable-helper:first-child+li {
       margin-top: 0;
     }
   }
 
   // Selectable
   .selectable-demo-connected {
-    & + & {
+    &+& {
       margin-top: $spacer;
 
       @include media-breakpoint-up(sm) {
@@ -95,6 +78,7 @@
     color: $blue-800;
     z-index: 9;
   }
+
   .droppable-demo-drop {
     background-color: $green-100;
     border-color: $green-500;
@@ -110,7 +94,7 @@
     position: relative;
     @include border-top-radius($border-radius);
 
-    > span {
+    >span {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -128,7 +112,7 @@
   // ------------------------------
 
   .glyphs {
-    > div > div {
+    >div>div {
       padding: 0.5rem 1rem;
       @include transition(all ease-in-out $component-transition-timer);
 

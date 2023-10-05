@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # Floating action buttons
@@ -25,6 +8,7 @@
 
 // Check if component is enabled
 @if $enable-fab {
+
   // Base
   .fab-menu {
     position: relative;
@@ -36,7 +20,7 @@
     z-index: $zindex-dropdown - 3;
 
     // Inside page header
-    .page-header > & {
+    .page-header>& {
       bottom: -($fab-main-btn-size / 2);
     }
 
@@ -50,7 +34,7 @@
     }
 
     // Hide items
-    .fab-menu-inner > li {
+    .fab-menu-inner>li {
       visibility: hidden;
       opacity: 0;
       transition: all ease-in-out ($component-transition-timer * 2);
@@ -80,7 +64,7 @@
     // Show items
     &[data-fab-toggle="hover"]:hover,
     &[data-fab-state="open"] {
-      .fab-menu-inner > li {
+      .fab-menu-inner>li {
         visibility: visible;
         opacity: 1;
       }
@@ -109,13 +93,14 @@
   // Top placement
   .fab-menu-top-left,
   .fab-menu-top-right {
+
     // Top spacing
-    .content-wrapper > & {
+    .content-wrapper>& {
       top: -($fab-main-btn-size / 2);
     }
 
     // Inside navbar
-    .navbar > & {
+    .navbar>& {
       bottom: -($fab-main-btn-size / 2);
     }
   }
@@ -128,13 +113,11 @@
 
     // Keep space for footer
     &.reached-bottom {
-      bottom: $nav-link-height +
-        rem-calc($navbar-border-width * 2) +
-        ($spacer * 2);
+      bottom: $nav-link-height + rem-calc($navbar-border-width * 2) + ($spacer * 2);
     }
 
     // Inside navbar
-    .navbar > & {
+    .navbar>& {
       top: -($fab-main-btn-size / 2);
     }
   }
@@ -155,7 +138,7 @@
     padding: 0;
 
     // Menu items
-    > li {
+    >li {
       display: block;
       position: absolute;
       top: $fab-btn-gap;
@@ -187,19 +170,20 @@
         height: $fab-inner-btn-size;
 
         // Icon spacing
-        > i {
+        >i {
           margin: ($btn-float-padding - $fab-btn-gap);
         }
       }
 
       // Keep shadow for opened dropdown toggle
-      .show > .btn-float.dropdown-toggle {
+      .show>.btn-float.dropdown-toggle {
         box-shadow: $shadow-depth2;
       }
 
       // Left and right menus
       .dropleft,
       .dropright {
+
         .btn:before,
         .btn:after {
           content: none;
@@ -219,9 +203,7 @@
 
       // Badge marks
       .badge-mark {
-        top: (
-          $fab-inner-btn-spacing - $fab-badge-spacer-y + ($badge-mark-size / 2)
-        );
+        top: ($fab-inner-btn-spacing - $fab-badge-spacer-y + ($badge-mark-size / 2));
         right: -($fab-badge-spacer-x - ($badge-mark-size / 2));
       }
 
@@ -264,7 +246,7 @@
       padding: ($fab-main-btn-size / 2);
 
       // Icons
-      > i {
+      >i {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -306,6 +288,7 @@
 
   // Open icon
   .fab-icon-open {
+
     .fab-menu[data-fab-toggle="hover"]:hover &,
     .fab-menu[data-fab-state="open"] & {
       opacity: 0;
@@ -331,32 +314,28 @@
   .fab-menu-top,
   .fab-menu-top-left,
   .fab-menu-top-right {
+
     &[data-fab-toggle="hover"]:hover,
     &[data-fab-state="open"] {
-      .fab-menu-inner > li {
+      .fab-menu-inner>li {
         &:nth-child(1) {
-          top: ($fab-inner-btn-size + $fab-inner-btn-spacing) +
-            ($fab-btn-gap * 2);
+          top: ($fab-inner-btn-size + $fab-inner-btn-spacing) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(2) {
-          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 2) +
-            ($fab-btn-gap * 2);
+          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 2) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(3) {
-          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 3) +
-            ($fab-btn-gap * 2);
+          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 3) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(4) {
-          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 4) +
-            ($fab-btn-gap * 2);
+          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 4) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(5) {
-          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 5) +
-            ($fab-btn-gap * 2);
+          top: (($fab-inner-btn-size + $fab-inner-btn-spacing) * 5) + ($fab-btn-gap * 2);
         }
       }
     }
@@ -366,32 +345,28 @@
   .fab-menu-bottom,
   .fab-menu-bottom-left,
   .fab-menu-bottom-right {
+
     &[data-fab-toggle="hover"]:hover,
     &[data-fab-state="open"] {
-      .fab-menu-inner > li {
+      .fab-menu-inner>li {
         &:nth-child(1) {
-          top: -($fab-inner-btn-size + $fab-inner-btn-spacing) +
-            ($fab-btn-gap * 2);
+          top: -($fab-inner-btn-size + $fab-inner-btn-spacing) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(2) {
-          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 2) +
-            ($fab-btn-gap * 2);
+          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 2) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(3) {
-          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 3) +
-            ($fab-btn-gap * 2);
+          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 3) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(4) {
-          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 4) +
-            ($fab-btn-gap * 2);
+          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 4) + ($fab-btn-gap * 2);
         }
 
         &:nth-child(5) {
-          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 5) +
-            ($fab-btn-gap * 2);
+          top: -(($fab-inner-btn-size + $fab-inner-btn-spacing) * 5) + ($fab-btn-gap * 2);
         }
       }
     }
@@ -402,6 +377,7 @@
   //
 
   .fab-menu-inner div[data-fab-label] {
+
     // Base
     &:after {
       content: attr(data-fab-label);

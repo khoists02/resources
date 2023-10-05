@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
 *
 *  # Select2 selects
@@ -74,7 +57,7 @@
       white-space: nowrap;
 
       // Icons
-      > i {
+      >i {
         margin-right: $element-spacer-x;
       }
     }
@@ -220,7 +203,7 @@
       }
 
       // Icons
-      > i {
+      >i {
         margin-right: $element-spacer-x;
       }
 
@@ -324,19 +307,19 @@
     padding: 0;
 
     // Add scrollbar to first level list
-    .select2-results > & {
+    .select2-results>& {
       padding-bottom: $dropdown-padding-y;
       max-height: $select2-max-height;
       overflow-y: auto;
 
       // Add top spacing if search is hidden
-      .select2-search--hide + & {
+      .select2-search--hide+& {
         padding-top: $dropdown-padding-y;
       }
     }
 
     // First one
-    .select2-results:first-child > & {
+    .select2-results:first-child>& {
       padding-top: $dropdown-padding-y;
     }
   }
@@ -349,7 +332,7 @@
     @include transition(all ease-in-out $component-transition-timer);
 
     // Add 1px gap between options
-    & + & {
+    &+& {
       margin-top: $dropdown-item-spacer-y;
     }
 
@@ -387,7 +370,7 @@
     }
 
     // Add double horizontal spacing for nested options
-    .select2-results__options--nested > & {
+    .select2-results__options--nested>& {
       padding-left: ($dropdown-item-padding-x * 2);
       padding-right: ($dropdown-item-padding-x * 2);
     }
@@ -403,7 +386,7 @@
     margin-bottom: $dropdown-padding-y;
 
     // Remove top spacing from the first group title
-    .select2-results__option:first-child > & {
+    .select2-results__option:first-child>& {
       margin-top: 0;
     }
   }
@@ -424,7 +407,7 @@
     padding-top: 0;
 
     // Add extra top spacing
-    + .select2-results__option {
+    +.select2-results__option {
       margin-top: $dropdown-padding-y;
     }
   }
@@ -456,6 +439,7 @@
     }
 
     &.select2-container--above {
+
       .select2-selection--single,
       .select2-selection--multiple {
         @include border-top-radius(0);
@@ -469,6 +453,7 @@
     }
 
     &.select2-container--below {
+
       .select2-selection--single,
       .select2-selection--multiple {
         @include border-bottom-radius(0);
@@ -503,7 +488,7 @@
     }
 
     // Remove top spacing from the results message
-    + .select2-results .select2-results__message:first-child {
+    +.select2-results .select2-results__message:first-child {
       padding-top: 0;
     }
 

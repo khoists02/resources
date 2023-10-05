@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Custom form inputs
@@ -37,54 +20,61 @@
   }
 
   &-secondary {
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $secondary;
       border-color: $secondary;
     }
   }
 
   &-dark {
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $dark;
       border-color: $dark;
     }
   }
 
   &-success {
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $success;
       border-color: $success;
     }
   }
 
   &-danger {
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $danger;
       border-color: $danger;
     }
   }
 
   &-warning {
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $warning;
       border-color: $warning;
     }
   }
 
   &-info {
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $info;
       border-color: $info;
     }
   }
 
   &.custom-control-right {
+
     // Stick original input to the right
     .custom-control-input {
       left: auto;
@@ -124,9 +114,10 @@ label.custom-control {
 
 // Input
 .custom-control-input {
+
   // Active state
-  &:not(:checked):not(:disabled):active ~ .custom-control-label:before,
-  &:not(:checked):not(:disabled) ~ .custom-control-label:active:before {
+  &:not(:checked):not(:disabled):active~.custom-control-label:before,
+  &:not(:checked):not(:disabled)~.custom-control-label:active:before {
     border-color: darken($custom-control-indicator-border-color, 15%);
   }
 
@@ -137,7 +128,7 @@ label.custom-control {
 
   // Disabled state
   &:disabled {
-    ~ .custom-control-label {
+    ~.custom-control-label {
       cursor: $cursor-disabled;
 
       &:before {
@@ -175,27 +166,26 @@ label.custom-control {
 .custom-checkbox,
 .custom-radio {
   &-inverse {
+
     .custom-control-label::before,
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
-    .custom-control-input:not(:checked):not(:disabled):active
-      ~ .custom-control-label:before,
-    .custom-control-input:not(:checked):not(:disabled)
-      ~ .custom-control-label:active:before {
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:focus:not(:checked)~.custom-control-label::before,
+    .custom-control-input:not(:checked):not(:disabled):active~.custom-control-label:before,
+    .custom-control-input:not(:checked):not(:disabled)~.custom-control-label:active:before {
       border-color: $white;
     }
 
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $white;
     }
 
     .custom-control-label::before,
-    .custom-control-input:disabled ~ .custom-control-label::before {
+    .custom-control-input:disabled~.custom-control-label::before {
       background-color: transparent;
     }
 
-    .custom-control-input:disabled ~ .custom-control-label {
+    .custom-control-input:disabled~.custom-control-label {
       color: rgba($white, 0.75);
     }
   }
@@ -203,16 +193,14 @@ label.custom-control {
 
 // Checkbox active indicator
 .custom-checkbox-inverse {
-  .custom-control-input:checked ~ .custom-control-label:after {
-    background-image: escape-svg(
-      $custom-checkbox-inverse-indicator-icon-checked
-    );
+  .custom-control-input:checked~.custom-control-label:after {
+    background-image: escape-svg($custom-checkbox-inverse-indicator-icon-checked );
   }
 }
 
 // Radio active indicator
 .custom-radio-inverse {
-  .custom-control-input:checked ~ .custom-control-label:after {
+  .custom-control-input:checked~.custom-control-label:after {
     background-image: escape-svg($custom-radio-inverse-indicator-icon-checked);
   }
 }
@@ -223,6 +211,7 @@ label.custom-control {
 
 // Base
 .custom-switch {
+
   // Switch UI
   .custom-control-label {
     display: inline-block;
@@ -238,10 +227,8 @@ label.custom-control {
 
     // Handle
     &::after {
-      top: add(
-        ($line-height-computed - $custom-control-indicator-size) / 2,
-        $custom-control-indicator-border-width
-      );
+      top: add(($line-height-computed - $custom-control-indicator-size) / 2,
+          $custom-control-indicator-border-width );
       left: $custom-control-indicator-border-width;
       background-color: $custom-switch-indicator-color;
       box-shadow: $custom-switch-indicator-box-shadow;
@@ -254,40 +241,39 @@ label.custom-control {
   }
 
   // Handler color
-  .custom-control-input:checked ~ .custom-control-label::after {
+  .custom-control-input:checked~.custom-control-label::after {
     background-color: $custom-switch-indicator-color;
   }
 
   // On color
-  .custom-control-input:checked ~ .custom-control-label::before,
-  .custom-control-input:disabled:checked ~ .custom-control-label::before {
+  .custom-control-input:checked~.custom-control-label::before,
+  .custom-control-input:disabled:checked~.custom-control-label::before {
     background-color: $custom-switch-on-color;
   }
 
   // Off color
-  .custom-control-input:not(:checked):active ~ .custom-control-label::before,
-  .custom-control-input:disabled ~ .custom-control-label::before,
-  .custom-control-input[disabled] ~ .custom-control-label::before {
+  .custom-control-input:not(:checked):active~.custom-control-label::before,
+  .custom-control-input:disabled~.custom-control-label::before,
+  .custom-control-input[disabled]~.custom-control-label::before {
     background-color: $custom-switch-off-color;
   }
 
   // Disabled handler
-  .custom-control-input:disabled ~ .custom-control-label:after {
+  .custom-control-input:disabled~.custom-control-label:after {
     opacity: 0.9;
   }
 
   // Right alignment
   &.custom-control-right {
+
     // Label
     .custom-control-label {
       padding-right: $custom-switch-width + $custom-control-gutter;
 
       // Re-calculate handle position
       &:after {
-        right: subtract(
-          ($custom-switch-width - $custom-switch-indicator-size),
-          $custom-control-indicator-border-width
-        );
+        right: subtract(($custom-switch-width - $custom-switch-indicator-size),
+            $custom-control-indicator-border-width );
       }
     }
   }
@@ -311,17 +297,18 @@ label.custom-control {
   //
 
   &-inverse {
+
     // On color
-    .custom-control-input:checked ~ .custom-control-label::before,
-    .custom-control-input:disabled:checked ~ .custom-control-label::before {
+    .custom-control-input:checked~.custom-control-label::before,
+    .custom-control-input:disabled:checked~.custom-control-label::before {
       background-color: $custom-switch-inverse-on-color;
     }
 
     // Off color
     .custom-control-label::before,
-    .custom-control-input:not(:checked):active ~ .custom-control-label::before,
-    .custom-control-input:disabled ~ .custom-control-label::before,
-    .custom-control-input[disabled] ~ .custom-control-label::before {
+    .custom-control-input:not(:checked):active~.custom-control-label::before,
+    .custom-control-input:disabled~.custom-control-label::before,
+    .custom-control-input[disabled]~.custom-control-label::before {
       background-color: $custom-switch-inverse-off-color;
     }
   }
@@ -349,9 +336,7 @@ label.custom-control {
 
   // Adjust button border radius
   &:after {
-    @include border-right-radius(
-      subtract($input-border-radius, $input-border-width)
-    );
+    @include border-right-radius(subtract($input-border-radius, $input-border-width));
   }
 
   // Keep the left border if you want to make input border transparent

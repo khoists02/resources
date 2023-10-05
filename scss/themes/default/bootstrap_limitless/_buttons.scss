@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Button component
@@ -56,36 +39,24 @@
 
     // Icon button
     &.btn-icon {
-      width: add(
-        (($btn-padding-y * 2) + $line-height-computed),
-        ($btn-border-width * 4)
-      );
-      height: add(
-        (($btn-padding-y * 2) + $line-height-computed),
-        ($btn-border-width * 4)
-      );
+      width: add((($btn-padding-y * 2) + $line-height-computed),
+          ($btn-border-width * 4));
+      height: add((($btn-padding-y * 2) + $line-height-computed),
+          ($btn-border-width * 4));
 
       // Sizes
       &.btn-sm {
-        width: add(
-          (($btn-padding-y-sm * 2) + $line-height-computed),
-          ($btn-border-width * 4)
-        );
-        height: add(
-          (($btn-padding-y-sm * 2) + $line-height-computed),
-          ($btn-border-width * 4)
-        );
+        width: add((($btn-padding-y-sm * 2) + $line-height-computed),
+            ($btn-border-width * 4));
+        height: add((($btn-padding-y-sm * 2) + $line-height-computed),
+            ($btn-border-width * 4));
       }
 
       &.btn-lg {
-        width: add(
-          (($btn-padding-y-lg * 2) + $line-height-computed),
-          ($btn-border-width * 4)
-        );
-        height: add(
-          (($btn-padding-y-lg * 2) + $line-height-computed),
-          ($btn-border-width * 4)
-        );
+        width: add((($btn-padding-y-lg * 2) + $line-height-computed),
+            ($btn-border-width * 4));
+        height: add((($btn-padding-y-lg * 2) + $line-height-computed),
+            ($btn-border-width * 4));
       }
     }
 
@@ -107,8 +78,9 @@
 
 // Link buttons
 .btn-link {
+
   // Opened dropdown
-  .show > &.dropdown-toggle {
+  .show>&.dropdown-toggle {
     color: $link-hover-color;
   }
 }
@@ -119,17 +91,13 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  width: add(
-    (($btn-padding-y * 2) + $line-height-computed),
-    ($btn-border-width * 2)
-  );
-  height: add(
-    (($btn-padding-y * 2) + $line-height-computed),
-    ($btn-border-width * 2)
-  );
+  width: add((($btn-padding-y * 2) + $line-height-computed),
+      ($btn-border-width * 2));
+  height: add((($btn-padding-y * 2) + $line-height-computed),
+      ($btn-border-width * 2));
 
   // Icon
-  > i {
+  >i {
     position: static;
     min-width: $icon-font-size;
   }
@@ -142,25 +110,17 @@
 
   // Sizes
   &.btn-sm {
-    width: add(
-      (($btn-padding-y-sm * 2) + $line-height-computed),
-      ($btn-border-width * 2)
-    );
-    height: add(
-      (($btn-padding-y-sm * 2) + $line-height-computed),
-      ($btn-border-width * 2)
-    );
+    width: add((($btn-padding-y-sm * 2) + $line-height-computed),
+        ($btn-border-width * 2));
+    height: add((($btn-padding-y-sm * 2) + $line-height-computed),
+        ($btn-border-width * 2));
   }
 
   &.btn-lg {
-    width: add(
-      (($btn-padding-y-lg * 2) + $line-height-computed),
-      ($btn-border-width * 2)
-    );
-    height: add(
-      (($btn-padding-y-lg * 2) + $line-height-computed),
-      ($btn-border-width * 2)
-    );
+    width: add((($btn-padding-y-lg * 2) + $line-height-computed),
+        ($btn-border-width * 2));
+    height: add((($btn-padding-y-lg * 2) + $line-height-computed),
+        ($btn-border-width * 2));
   }
 }
 
@@ -181,7 +141,7 @@
   }
 
   // Text
-  > span {
+  >span {
     display: block;
     padding-top: ($spacer / 2);
     margin-bottom: -($font-size-base / 2);
@@ -197,7 +157,7 @@
   transition: opacity ease-in-out $component-transition-timer,
     visibility ease-in-out $component-transition-timer;
 
-  .btn.active > & {
+  .btn.active>& {
     opacity: 1;
     visibility: visible;
   }
@@ -209,85 +169,62 @@
 
 // Base
 .btn-labeled {
+
   // Icon
-  > b {
+  >b {
     position: absolute;
     top: -$btn-border-width;
     background-color: rgba($black, 0.15);
     display: block;
     line-height: 1;
-    padding: (($line-height-computed - $icon-font-size) / 2) + $btn-padding-y +
-      rem-calc($btn-border-width);
+    padding: (($line-height-computed - $icon-font-size) / 2) + $btn-padding-y + rem-calc($btn-border-width);
 
     // Center icon vertically
-    > i {
+    >i {
       top: 0;
     }
   }
 
   // Rounded icon
   &.rounded-pill {
-    > b {
+    >b {
       @include border-radius($rounded-pill);
     }
   }
 
   // Sizes
-  &.btn-lg > b {
-    padding: (($line-height-computed-lg - $icon-font-size) / 2) +
-      $btn-padding-y-lg + rem-calc($btn-border-width);
+  &.btn-lg>b {
+    padding: (($line-height-computed-lg - $icon-font-size) / 2) + $btn-padding-y-lg + rem-calc($btn-border-width);
   }
 
-  &.btn-sm > b {
-    padding: (($line-height-computed-sm - $icon-font-size) / 2) +
-      $btn-padding-y-sm + rem-calc($btn-border-width);
+  &.btn-sm>b {
+    padding: (($line-height-computed-sm - $icon-font-size) / 2) + $btn-padding-y-sm + rem-calc($btn-border-width);
   }
 }
 
 // Left icon
 .btn-labeled-left {
-  padding-left: (
-      (
-          (
-              (($line-height-computed - $icon-font-size) / 2) + $btn-padding-y +
-                rem-calc($btn-border-width)
-            ) * 2
-        ) + $icon-font-size
-    ) + $btn-padding-x;
+  padding-left: ((((($line-height-computed - $icon-font-size) / 2) + $btn-padding-y + rem-calc($btn-border-width)) * 2) + $icon-font-size ) + $btn-padding-x;
 
   // Icon
-  > b {
+  >b {
     left: -$btn-border-width;
     @include border-left-radius($btn-border-radius);
   }
 
   // Sizes
   &.btn-lg {
-    padding-left: (
-        (
-            (
-                (($line-height-computed-lg - $icon-font-size) / 2) +
-                  $btn-padding-y-lg + rem-calc($btn-border-width)
-              ) * 2
-          ) + $icon-font-size
-      ) + $btn-padding-x-lg;
+    padding-left: ((((($line-height-computed-lg - $icon-font-size) / 2) + $btn-padding-y-lg + rem-calc($btn-border-width)) * 2) + $icon-font-size ) + $btn-padding-x-lg;
 
-    > b {
+    >b {
       @include border-left-radius($btn-border-radius-lg);
     }
   }
 
   &.btn-sm {
-    padding-left: (
-        (
-            (
-                (($line-height-computed-sm - $icon-font-size) / 2) +
-                  $btn-padding-y-sm + rem-calc($btn-border-width)
-              ) * 2
-          ) + $icon-font-size
-      ) + $btn-padding-x-sm;
+    padding-left: ((((($line-height-computed-sm - $icon-font-size) / 2) + $btn-padding-y-sm + rem-calc($btn-border-width)) * 2) + $icon-font-size ) + $btn-padding-x-sm;
 
-    > b {
+    >b {
       @include border-left-radius($btn-border-radius-sm);
     }
   }
@@ -295,48 +232,27 @@
 
 // Right icon
 .btn-labeled-right {
-  padding-right: (
-      (
-          (
-              $line-height-computed - $icon-font-size + $btn-padding-y -
-                rem-calc($btn-border-width)
-            ) * 2
-        ) + $icon-font-size
-    ) + $btn-padding-x;
+  padding-right: ((($line-height-computed - $icon-font-size + $btn-padding-y - rem-calc($btn-border-width)) * 2) + $icon-font-size ) + $btn-padding-x;
 
   // Icon
-  > b {
+  >b {
     right: -$btn-border-width;
     @include border-right-radius($btn-border-radius);
   }
 
   // Sizes
   &.btn-lg {
-    padding-right: (
-        (
-            (
-                (($line-height-computed-lg - $icon-font-size) / 2) +
-                  $btn-padding-y-lg + rem-calc($btn-border-width)
-              ) * 2
-          ) + $icon-font-size
-      ) + $btn-padding-x-lg;
+    padding-right: ((((($line-height-computed-lg - $icon-font-size) / 2) + $btn-padding-y-lg + rem-calc($btn-border-width)) * 2) + $icon-font-size ) + $btn-padding-x-lg;
 
-    > b {
+    >b {
       @include border-right-radius($btn-border-radius-lg);
     }
   }
 
   &.btn-sm {
-    padding-right: (
-        (
-            (
-                (($line-height-computed-sm - $icon-font-size) / 2) +
-                  $btn-padding-y-sm + rem-calc($btn-border-width)
-              ) * 2
-          ) + $icon-font-size
-      ) + $btn-padding-x-sm;
+    padding-right: ((((($line-height-computed-sm - $icon-font-size) / 2) + $btn-padding-y-sm + rem-calc($btn-border-width)) * 2) + $icon-font-size ) + $btn-padding-x-sm;
 
-    > b {
+    >b {
       @include border-right-radius($btn-border-radius-sm);
     }
   }

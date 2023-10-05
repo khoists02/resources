@@ -1,20 +1,3 @@
-/*!
- * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
- * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
- * herein are proprietary to AHS and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
- * Confidentiality and Non-disclosure agreements explicitly covering such access.
- *
- * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
- * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
- * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
- * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
- * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
- */
-
 /* ------------------------------------------------------------------------------
  *
  *  # Navbar component
@@ -92,9 +75,11 @@
 
 // Base
 .navbar-nav {
+
   // Tabs and pills
   // Tabs
   .nav-tabs {
+
     // Links
     .nav-link {
       color: $nav-tabs-link-color;
@@ -111,8 +96,8 @@
     }
 
     // Active state
-    .show > .nav-link,
-    .active > .nav-link,
+    .show>.nav-link,
+    .active>.nav-link,
     .nav-link.show,
     .nav-link.active {
       color: $nav-tabs-link-active-color;
@@ -134,7 +119,7 @@
 
       // Colrs in active state
       &.active,
-      .show:not(.navbar-collapse) > & {
+      .show:not(.navbar-collapse)>& {
         color: $nav-pills-link-active-color;
       }
 
@@ -162,10 +147,8 @@
   cursor: pointer;
   padding: $navbar-link-padding-y $navbar-link-padding-x;
   outline: 0;
-  @include transition(
-    color ease-in-out $component-transition-timer,
-    background-color ease-in-out $component-transition-timer
-  );
+  @include transition(color ease-in-out $component-transition-timer,
+    background-color ease-in-out $component-transition-timer );
 
   // Disabled state
   &.disabled {
@@ -179,7 +162,7 @@
   }
 
   // Badges
-  > .badge {
+  >.badge {
     position: absolute;
     top: 0;
     right: 0;
@@ -195,6 +178,7 @@
 // Navigation with bottom highlight
 .navbar-nav-underline {
   .navbar-nav-link {
+
     &,
     &:hover,
     &:focus,
@@ -236,10 +220,8 @@
   padding-left: map-get($spacers, 2);
   padding-right: map-get($spacers, 2);
   cursor: pointer;
-  @include transition(
-    color ease-in-out $component-transition-timer,
-    background-color ease-in-out $component-transition-timer
-  );
+  @include transition(color ease-in-out $component-transition-timer,
+    background-color ease-in-out $component-transition-timer );
 
   // Hover state
   @include hover-focus {
@@ -309,12 +291,12 @@
           margin-right: -($navbar-padding-x / 2);
 
           // Add top spacing to the first nav item
-          .navbar-nav:first-of-type > .nav-item:first-child {
+          .navbar-nav:first-of-type>.nav-item:first-child {
             margin-top: ($navbar-padding-x / 2);
           }
 
           // Add bottom spacing to the last nav item
-          .navbar-nav:last-of-type > .nav-item:not(.show):last-child {
+          .navbar-nav:last-of-type>.nav-item:not(.show):last-child {
             margin-bottom: ($navbar-padding-x / 2);
           }
 
@@ -327,7 +309,7 @@
             padding: $navigation-item-padding-y $navbar-padding-x;
 
             // Display badge on the right side
-            > .badge {
+            >.badge {
               &:not(.position-static) {
                 position: static;
               }
@@ -349,8 +331,8 @@
           }
 
           // Add vertical spacing to dropdowns
-          .navbar-nav > .nav-item {
-            > .dropdown-menu {
+          .navbar-nav>.nav-item {
+            >.dropdown-menu {
               margin-top: $navbar-padding-x;
               margin-bottom: $navbar-padding-x;
             }
@@ -370,6 +352,7 @@
 
           // Override dropdown submanus
           .dropdown-submenu {
+
             // Change arrow icon direction
             .dropdown-toggle:after {
               content: $icon-menu-arrow-down;
@@ -387,21 +370,14 @@
             }
 
             // Third level
-            > .dropdown-menu > .dropdown-item,
-            > .dropdown-menu > .dropdown-submenu > .dropdown-item {
+            >.dropdown-menu>.dropdown-item,
+            >.dropdown-menu>.dropdown-submenu>.dropdown-item {
               padding-left: ($dropdown-item-padding-x * 2);
             }
 
             // Fourth level
-            > .dropdown-menu
-              > .dropdown-submenu
-              > .dropdown-menu
-              > .dropdown-item,
-            > .dropdown-menu
-              > .dropdown-submenu
-              > .dropdown-menu
-              > .dropdown-submenu
-              > .dropdown-item {
+            >.dropdown-menu>.dropdown-submenu>.dropdown-menu>.dropdown-item,
+            >.dropdown-menu>.dropdown-submenu>.dropdown-menu>.dropdown-submenu>.dropdown-item {
               padding-left: ($dropdown-item-padding-x * 3);
             }
           }
@@ -409,16 +385,16 @@
 
         // Add top borders for better visual separation
         &.navbar-dark .navbar-collapse {
-          border-top: $navbar-dark-collapse-border-width solid
-            $navbar-dark-collapse-border-color;
+          border-top: $navbar-dark-collapse-border-width solid $navbar-dark-collapse-border-color;
         }
+
         &.navbar-light .navbar-collapse {
-          border-top: $navbar-light-collapse-border-width solid
-            $navbar-light-collapse-border-color;
+          border-top: $navbar-light-collapse-border-width solid $navbar-light-collapse-border-color;
         }
       }
 
       @include media-breakpoint-up($next) {
+
         // Logo
         .navbar-brand {
           min-width: $sidebar-base-width - $navbar-padding-x;
@@ -445,7 +421,7 @@
         position: static;
 
         // Keep dropdowns on top
-        > .dropdown-menu {
+        >.dropdown-menu {
           position: absolute;
           left: $content-container-padding-x !important;
           right: $content-container-padding-x !important;
@@ -484,8 +460,8 @@
     }
 
     // Active state
-    .show > .nav-link,
-    .active > .nav-link,
+    .show>.nav-link,
+    .active>.nav-link,
     .nav-link.show,
     .nav-link.active {
       color: $nav-link-active-color;
@@ -510,8 +486,8 @@
   }
 
   // Active state
-  .show > .navbar-nav-link,
-  .active > .navbar-nav-link,
+  .show>.navbar-nav-link,
+  .active>.navbar-nav-link,
   .navbar-nav-link.show,
   .navbar-nav-link.active {
     color: $navbar-light-active-color;
@@ -556,8 +532,8 @@
     }
 
     // Active state
-    .show > .nav-link,
-    .active > .nav-link,
+    .show>.nav-link,
+    .active>.nav-link,
     .nav-link.show,
     .nav-link.active {
       color: $nav-link-active-color;
@@ -582,8 +558,8 @@
   }
 
   // Active state
-  .show > .navbar-nav-link,
-  .active > .navbar-nav-link,
+  .show>.navbar-nav-link,
+  .active>.navbar-nav-link,
   .navbar-nav-link.show,
   .navbar-nav-link.active {
     color: $navbar-dark-active-color;
@@ -628,10 +604,8 @@
   }
 
   &-lg-md-bottom {
-    padding-bottom: add(
-      ($nav-link-height-lg + $nav-link-height),
-      ($navbar-border-width * 2)
-    );
+    padding-bottom: add(($nav-link-height-lg + $nav-link-height),
+        ($navbar-border-width * 2));
   }
 
   &-md-md-bottom {
@@ -639,10 +613,8 @@
   }
 
   &-md-sm-bottom {
-    padding-bottom: add(
-      ($nav-link-height + $nav-link-height-sm),
-      ($navbar-border-width * 2)
-    );
+    padding-bottom: add(($nav-link-height + $nav-link-height-sm),
+        ($navbar-border-width * 2));
   }
 
   // Top placement
@@ -663,10 +635,8 @@
   }
 
   &-lg-md-top {
-    padding-top: add(
-      ($nav-link-height-lg + $nav-link-height),
-      ($navbar-border-width * 2)
-    );
+    padding-top: add(($nav-link-height-lg + $nav-link-height),
+        ($navbar-border-width * 2));
   }
 
   &-md-md-top {
@@ -674,19 +644,18 @@
   }
 
   &-md-sm-top {
-    padding-top: add(
-      ($nav-link-height + $nav-link-height-sm),
-      ($navbar-border-width * 2)
-    );
+    padding-top: add(($nav-link-height + $nav-link-height-sm),
+        ($navbar-border-width * 2));
   }
 }
 
 // User dropdown
 .dropdown-user {
   .navbar-nav-link {
+
     // Re-define vertical padding
     &,
-    > span {
+    >span {
       padding-top: ($navbar-link-padding-y / 2);
       padding-bottom: ($navbar-link-padding-y / 2);
     }
@@ -707,9 +676,10 @@
 
 // Left and right alignment
 .mega-menu {
+
   // Left alignment
   &-left {
-    > .dropdown-menu {
+    >.dropdown-menu {
       /*rtl:ignore*/
       left: auto;
     }
@@ -717,7 +687,7 @@
 
   // Right alignment
   &-right {
-    > .dropdown-menu {
+    >.dropdown-menu {
       left: auto;
       right: 0;
     }
@@ -726,7 +696,7 @@
 
 // Full width
 .mega-menu-full {
-  > .dropdown-menu {
+  >.dropdown-menu {
     left: $navbar-padding-x;
     right: $navbar-padding-x;
 
@@ -744,9 +714,7 @@
   justify-content: space-between;
   padding-left: $dropdown-content-body-padding-x;
   padding-right: $dropdown-content-body-padding-x;
-  @include border-top-radius(
-    $dropdown-border-radius - rem-calc($dropdown-border-width)
-  );
+  @include border-top-radius($dropdown-border-radius - rem-calc($dropdown-border-width));
 
   // If header has no background classes
   &:not([class*="bg-"]) {
@@ -761,8 +729,8 @@
   }
 
   // Add top border if used with the table
-  + .table-responsive,
-  + .table {
+  +.table-responsive,
+  +.table {
     border-top: $table-border-width solid $table-border-color;
   }
 }
@@ -780,7 +748,7 @@
   padding: $dropdown-content-body-padding-y $dropdown-content-body-padding-x;
 
   // Remove top padding if header has no background
-  .dropdown-content-header:not([class*="bg-"]) + & {
+  .dropdown-content-header:not([class*="bg-"])+& {
     padding-top: 0;
   }
 }
@@ -790,11 +758,8 @@
   display: flex;
   align-items: center;
   padding: $dropdown-content-footer-padding-y $dropdown-content-body-padding-x;
-  border-top: $dropdown-content-footer-border-width solid
-    $dropdown-content-footer-border-color;
-  @include border-bottom-radius(
-    $dropdown-border-radius - rem-calc($dropdown-border-width)
-  );
+  border-top: $dropdown-content-footer-border-width solid $dropdown-content-footer-border-color;
+  @include border-bottom-radius($dropdown-border-radius - rem-calc($dropdown-border-width));
 }
 
 // Fixed navbar setup (works only in static layout)
@@ -805,6 +770,7 @@
 
 // Large
 .navbar-lg {
+
   // Brand
   .navbar-brand {
     padding-top: $navbar-brand-padding-y-lg;
@@ -836,18 +802,18 @@
 
   // User dropdown
   .dropdown-user {
-    > .navbar-nav-link {
+    >.navbar-nav-link {
+
       // Set vertical padding
       &,
-      > span {
+      >span {
         padding-top: ($navbar-link-padding-y-lg / 2);
         padding-bottom: ($navbar-link-padding-y-lg / 2);
       }
 
       // User image
-      > img {
-        max-height: ($font-size-base * $line-height-base) +
-          ($navbar-link-padding-y-lg / 2) + ($navbar-link-padding-y-lg / 2);
+      >img {
+        max-height: ($font-size-base * $line-height-base) + ($navbar-link-padding-y-lg / 2) + ($navbar-link-padding-y-lg / 2);
       }
     }
   }
@@ -855,6 +821,7 @@
 
 // Small
 .navbar-sm {
+
   // Brand
   .navbar-brand {
     padding-top: $navbar-brand-padding-y-sm;
@@ -886,18 +853,18 @@
 
   // User dropdown
   .dropdown-user {
-    > .navbar-nav-link {
+    >.navbar-nav-link {
+
       // Set vertical padding
       &,
-      > span {
+      >span {
         padding-top: ($navbar-link-padding-y-sm / 2);
         padding-bottom: ($navbar-link-padding-y-sm / 2);
       }
 
       // User image
-      > img {
-        max-height: ($font-size-base * $line-height-base) +
-          ($navbar-link-padding-y-sm / 2) + ($navbar-link-padding-y-sm / 2);
+      >img {
+        max-height: ($font-size-base * $line-height-base) + ($navbar-link-padding-y-sm / 2) + ($navbar-link-padding-y-sm / 2);
       }
     }
   }
@@ -910,7 +877,7 @@
 .navbar-static {
   z-index: ($zindex-sticky + 4);
 
-  & + & {
+  &+& {
     z-index: ($zindex-sticky + 3);
   }
 
