@@ -1,0 +1,65 @@
+/*!
+ * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
+ * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
+ * herein are proprietary to AHS and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+ * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
+ * Confidentiality and Non-disclosure agreements explicitly covering such access.
+ *
+ * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
+ * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+ * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+ * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+ * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+ */
+
+/* ------------------------------------------------------------------------------
+ *
+ *  # Datatables Scroller
+ *
+ *  Drawing the rows required for the current display only, for fast operation
+ *
+ * ---------------------------------------------------------------------------- */
+
+// Check if component is enabled
+@if $enable-datatable-scroller {
+
+  // Base
+  .DTS {
+
+    // Prevent word wrap
+    tbody {
+      th,
+      td {
+        white-space: nowrap;
+      }
+    }
+
+    // Loading text
+    .DTS_Loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12.5rem;
+      height: 1.25rem;
+      margin-top: -($spacer);
+      margin-left: -6.25rem;
+      z-index: 1;
+      border: $table-border-width solid $table-border-color;
+      padding: 1.25rem 0;
+      text-align: center;
+    }
+
+    // Scroller areas
+    .dataTables_scrollHead,
+    .dataTables_scrollFoot {
+      background-color: $card-bg;
+    }
+
+    .dataTables_scrollBody {
+      z-index: 2;
+    }
+  }
+}

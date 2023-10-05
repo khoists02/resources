@@ -1,0 +1,99 @@
+/*!
+ * AdvaHealth Solutions Pty. Ltd. ("AHS") CONFIDENTIAL
+ * Copyright (c) 2022 AdvaHealth Solutions Pty. Ltd. All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains the property of AHS. The intellectual and technical concepts contained
+ * herein are proprietary to AHS and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+ * from AHS.  Access to the source code contained herein is hereby forbidden to anyone except current AHS employees, managers or contractors who have executed
+ * Confidentiality and Non-disclosure agreements explicitly covering such access.
+ *
+ * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
+ * information that is confidential and/or proprietary, and is a trade secret, of AHS. ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+ * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+ * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+ * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+ */
+
+/* ------------------------------------------------------------------------------
+ *
+ *  # Media object component
+ *
+ *  Overrides for media object component
+ *
+ * ---------------------------------------------------------------------------- */
+
+
+// Base class
+.media {
+  margin-top: $spacer;
+
+  // Remove vertical spacing in certain cases
+  &.card-body,
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// Media list
+.media-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+// Media title inside .media-body
+.media-title {
+  margin-bottom: $media-title-margin-bottom;
+}
+
+// Image preview
+.img-preview {
+  max-height: $img-preview-max-height;
+}
+
+
+//
+// Styling variations
+//
+
+// Bordered list
+.media-list-bordered {
+  .media {
+    margin-top: 0;
+    padding: $media-padding-y $media-padding-x;
+    border-top: $media-border-width solid $media-border-color;
+  }
+}
+
+// Linked list
+.media-list-linked {
+
+  // Item container
+  .media {
+    padding: $media-padding-y $media-padding-x;
+  }
+
+  // Inside media list
+  li.media {
+    margin-top: 0;
+    border-top: $media-border-width solid $media-border-color;
+    border-bottom: $media-border-width solid $media-border-color;
+  }
+
+  // Inside borderedmedia list
+  &.media-list-bordered li.media {
+    border-bottom: 0;
+  }
+
+  // Link
+  a.media {
+    color: inherit;
+    @include transition(background-color ease-in-out $component-transition-timer);
+
+    // Hover state
+    @include hover {
+      background-color: $media-link-hover-bg;
+    }
+  }
+}
